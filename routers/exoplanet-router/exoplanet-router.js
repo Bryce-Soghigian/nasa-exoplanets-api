@@ -41,6 +41,7 @@ router.get("/planet/:id",(req,res) => {
  * @api {get} api/exoplanets/search
  * @apiGroup Search
  * @apiParam ${?q=somesearchterm}
+ * @apiDescription Search the database using sql queries in the url
  */
 router.get("/search",(req,res) => {
     let db_query = req.query.q
@@ -55,7 +56,7 @@ router.get("/search",(req,res) => {
  * @api {get} api/exoplanets/query?q=Kepler-153
  * @apiGroup Search
  * @apiParam ${?q=pl_hostname}
- * @apiDescription make a database query with sql
+ * @apiDescription search the database by name
  */
 router.get("/query", (req,res) => {
     let db_query = req.query.q
