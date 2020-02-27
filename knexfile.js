@@ -8,7 +8,7 @@ module.exports = {
     
     connection: {
       host: '127.0.0.1',
-      port: '5555',
+      port: '5432',
       user: 'postgres',
       password:process.env.PASS,
       database: 'ExoPlanet'
