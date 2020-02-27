@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const helmet = require("helmet")
+const path = require('path')
 const exoplanet_kepler_router = require("./routers/exoplanet-router/exoplanet-router")
 
 
@@ -14,7 +15,9 @@ server.listen(PORT, () => {
 server.use(cors())
 server.use(express.json())
 server.use(helmet());
-server.use("/api/exoplanet",exoplanet_kepler_router)
+server.use("/api/exoplanets",exoplanet_kepler_router)
+//============Serverside Renderer======================//
+server.use('/static', express.static(path.join(__dirname, 'public')))
 
 
 //===========Server UP endpoint========================//

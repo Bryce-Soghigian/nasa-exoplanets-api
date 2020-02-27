@@ -1,0 +1,7 @@
+{
+    "name": "Exoplanets",
+    "version": "0.1.0",
+    "description": "Basic Documentation",
+    "title": "Nasa Confirmed Exoplanets API",
+    "url" : "https://nasa-exoplanet-kepler-api.herokuapp.com/"
+  }

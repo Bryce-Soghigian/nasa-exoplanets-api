@@ -6,8 +6,8 @@ exports.up =  function(knex) {
     exoplanet_data.string('pl_letter')
     exoplanet_data.string('pl_name')
     exoplanet_data.string('pl_discmethod')
-    exoplanet_data.decimal('pl_controvflag')
-    exoplanet_data.decimal('pl_pnum')
+    exoplanet_data.float('pl_controvflag')
+    exoplanet_data.float('pl_pnum')
     exoplanet_data.float("pl_orbper", 64)
     exoplanet_data.float("pl_orbpererr1",64)
     exoplanet_data.float('pl_orbpererr2',64)
@@ -183,9 +183,9 @@ exports.up =  function(knex) {
 \ dec_str 
 \ ___ Dec Value [sexagesimal]
 \ ra (degrees) 
-\ ___ RA Value [decimal degrees]
+\ ___ RA Value [float degrees]
 \ st_raerr (degrees) 
-\ ___ RA Uncertainty [decimal degrees]
+\ ___ RA Uncertainty [float degrees]
 \ dec (degrees) 
 \ ___ Dec Value [decimal degrees]
 \ st_decerr (degrees) 

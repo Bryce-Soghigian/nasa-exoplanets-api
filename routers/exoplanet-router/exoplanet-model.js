@@ -16,6 +16,7 @@ function findPlanetByID(id){
 function findPlanetByHostName(pl_hostname){
     return db('exoplanets').where({pl_hostname}).first()
 }
+
 function findAllPlanetNames(){
     return db.from("exoplanets").select("pl_hostname")
 }
