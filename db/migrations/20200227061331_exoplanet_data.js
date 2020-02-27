@@ -1,6 +1,12 @@
+
 exports.up =  function(knex) {
     return knex.schema.createTable('exoplanets',(exoplanet_data) => {
+<<<<<<< HEAD
     exoplanet_data.increments()
+=======
+    // exoplanet_data.increments("exoplanet_id")
+
+>>>>>>> 353aaad7cdf42607fbdd4f9d26867e19134d4e8c
     exoplanet_data.string('pl_hostname')
     exoplanet_data.string('pl_letter')
     exoplanet_data.string('pl_name')
@@ -263,5 +269,7 @@ exports.up =  function(knex) {
 };
 
 exports.down = function(knex,Promise) {
+
   return knex.schema.dropTableIfExists('exoplanets')
+
 };
