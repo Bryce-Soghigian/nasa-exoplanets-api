@@ -1,6 +1,6 @@
 exports.up =  function(knex) {
     return knex.schema.createTable('exoplanets',(exoplanet_data) => {
-    // exoplanet_data.increments("exoplanet_id")
+    exoplanet_data.increments()
     exoplanet_data.string('pl_hostname')
     exoplanet_data.string('pl_letter')
     exoplanet_data.string('pl_name')
