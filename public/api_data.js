@@ -61,7 +61,7 @@ define({ "api": [
         ]
       }
     },
-    "description": "<p>make a database query with sql</p>",
+    "description": "<p>search the database by name</p>",
     "version": "0.0.0",
     "filename": "routers/exoplanet-router/exoplanet-router.js",
     "groupTitle": "Search",
@@ -84,6 +84,7 @@ define({ "api": [
         ]
       }
     },
+    "description": "<p>Search the database using sql queries in the url</p>",
     "version": "0.0.0",
     "filename": "routers/exoplanet-router/exoplanet-router.js",
     "groupTitle": "Search",
