@@ -1,5 +1,5 @@
-exports.up =  function(knex) {
-    return knex.schema.createTable('exoplanets',(exoplanet_data) => {
+exports.up =   function(knex) {
+    return knex.schema.createTable('exoplanet_data',(exoplanet_data) => {
     exoplanet_data.increments("exoplanet_id")
     exoplanet_data.string('pl_hostname')
     exoplanet_data.string('pl_letter')
@@ -262,6 +262,6 @@ exports.up =  function(knex) {
   })
 };
 
-exports.down = async function(knex,Promise) {
-  return knex.schema.dropTableIfExists('users')
+exports.down = function(knex,Promise) {
+  return knex.schema.dropTableIfExists('exoplanet_data')
 };
