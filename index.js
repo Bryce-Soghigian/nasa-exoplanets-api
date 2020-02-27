@@ -14,3 +14,10 @@ server.listen(PORT, () => {
 server.use(cors())
 server.use(express.json())
 server.use(helmet());
+
+
+
+//===========Server UP endpoint========================//
+server.get("/",(req,res) => {
+    res.json({is_server_up:"true"})
+})
