@@ -1,0 +1,30 @@
+{
+  "name": "nasa-exoplanets-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryce-Soghigian/nasa-exoplanets-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bryce-Soghigian/nasa-exoplanets-api/issues"
+  },
+  "homepage": "https://github.com/Bryce-Soghigian/nasa-exoplanets-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "knex": "^0.20.10",
+    "nodemon": "^2.0.2",
+    "pg": "^7.18.2"
+  }
+}
