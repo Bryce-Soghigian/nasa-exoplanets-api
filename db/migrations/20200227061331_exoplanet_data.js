@@ -1,21 +1,21 @@
 exports.up =  function(knex) {
     return knex.schema.createTable('exoplanets',(exoplanet_data) => {
-    exoplanet_data.increments("exoplanet_id")
+    // exoplanet_data.increments("exoplanet_id")
     exoplanet_data.string('pl_hostname')
     exoplanet_data.string('pl_letter')
     exoplanet_data.string('pl_name')
     exoplanet_data.string('pl_discmethod')
     exoplanet_data.decimal('pl_controvflag')
     exoplanet_data.decimal('pl_pnum')
-    exoplanet_data.decimal("pl_orbper")
-    exoplanet_data.decimal("pl_orbpererr1")
-    exoplanet_data.decimal('pl_orbpererr2')
-    exoplanet_data.float('pl_orbperlim')
-    exoplanet_data.decimal("pl_orbpern")
-    exoplanet_data.decimal("pl_orbsmax")
-    exoplanet_data.float("pl_orbsmaxerr1")
-    exoplanet_data.float("pl_orbsmaxerr2")
-    exoplanet_data.decimal("pl_orbsmaxlim")
+    exoplanet_data.float("pl_orbper", 64)
+    exoplanet_data.float("pl_orbpererr1",64)
+    exoplanet_data.float('pl_orbpererr2',64)
+    exoplanet_data.float('pl_orbperlim',64)
+    exoplanet_data.float("pl_orbpern",64)
+    exoplanet_data.float("pl_orbsmax",64)
+    exoplanet_data.float("pl_orbsmaxerr1",64)
+    exoplanet_data.float("pl_orbsmaxerr2",64)
+    exoplanet_data.float("pl_orbsmaxlim", 64)
     exoplanet_data.integer("pl_orbsmaxn")
     exoplanet_data.float("pl_orbeccen")
     exoplanet_data.float("pl_orbeccenerr1")
@@ -262,6 +262,6 @@ exports.up =  function(knex) {
   })
 };
 
-exports.down = async function(knex,Promise) {
-  return knex.schema.dropTableIfExists('users')
+exports.down = function(knex,Promise) {
+  return knex.schema.dropTableIfExists('exoplanets')
 };
