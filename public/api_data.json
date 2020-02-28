@@ -102,6 +102,30 @@
   },
   {
     "type": "get",
+    "url": "api/exoplanets/planetsum/:id",
+    "title": "",
+    "group": "Planet_Data_Summary",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "id",
+            "optional": false,
+            "field": "id",
+            "description": "<p>of planet you are trying to get a sumary of</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>gets a bunch of valuable columns for the threeJS renderer will take in on the frontend &quot;pl_hostname&quot;,&quot;pl_name&quot;,&quot;pl_orbper&quot;,&quot;pl_orbsmax&quot;,&quot;pl_orbincl&quot;,&quot;pl_bmassj&quot; &quot;pl_dens&quot;,&quot;pl_radj&quot;,&quot;st_dist&quot;,&quot;st_teff&quot;,&quot;st_mass&quot;,&quot;st_rad&quot;,&quot;pl_facility&quot;</p>",
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "Planet_Data_Summary",
+    "name": "GetApiExoplanetsPlanetsumId"
+  },
+  {
+    "type": "get",
     "url": "api/exoplanets/query?q=Kepler-153",
     "title": "",
     "group": "Search",
