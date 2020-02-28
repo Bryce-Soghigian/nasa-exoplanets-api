@@ -11,7 +11,7 @@ router.get("/all",(req,res) => {
     .then(data => {
         res.status(200).json({data})
     }).catch(err => {
- 
+        console.log(err)
         res.status(500).json({error_message:err})
     })
 })
@@ -19,7 +19,7 @@ router.get("/all",(req,res) => {
 /** 
  * @api {get} api/exoplanets/planet/${id}
  * @apiGroup Find Planet By ID
- * @apiParam ${id} type float
+ * @apiParam {id} id The id
  * @apiDescription Gets a planet by id
  */
 router.get("/planet/:id",(req,res) => {
@@ -110,7 +110,7 @@ router.get("/maxaxisvaluerange",(req,res) => {
 })
 /**
  * @api {get} api/exoplanets/maxaxisvaluerange/${id}
- * @apiParam ${id} ID of the planet you are trying to get axis data on
+ * @apiParam {id} id of planet you are trying to get the axis data for
  * @apiGroup One Planets Axis Range
  * @apiDescription Planet Orbital Semi-Major Axis Value [AU]
  */
@@ -123,19 +123,8 @@ router.get("/maxaxisvaluerange/:id",(req,res) => {
         res.status(500).json({error_message:err})
     })
 })
-// router.get("/pname", (req,res) => {
-//     console.log("HIT THE ROUTE")
-//     let db_query = req.query.q
-//     if(!db_query){
-//         res.status(404).json({error_message:"please type a valid query"})
-//     }
-//     Model.findPlanetByPLName(db_query)
-//     .then(data => {
-//         res.status(200).json(data)
-//     }).catch(err => {
-//         res.status(500).json({error_message:err})
-//     })
-// })
+
+
 
 /**
  * @api {get} api/exoplanets/
@@ -149,5 +138,22 @@ router.get("/",(req,res) => {
     }).catch(err => {
         res.status(500).json({error_message:err})
     })
+})
+/**
+ * @api {get} api/exoplanets/planetsum/:id
+ * @apiGroup Planet Data Summary
+ * @apiParam {id} id of planet you are trying to get a sumary of
+ * @apiDescription gets a bunch of valuable columns for the threeJS renderer will take in on the frontend
+ * "pl_hostname","pl_name","pl_orbper","pl_orbsmax","pl_orbincl","pl_bmassj"
+ * "pl_dens","pl_radj","st_dist","st_teff","st_mass","st_rad","pl_facility"
+ */
+router.get("/planetsum/:id",(req,res) => {
+let id = req.params.id;
+Model.findPlanetSummary(id)
+.then(data => {
+    res.status(200).json(data)
+}).catch(err => {
+    res.status(500).json({error_message:err})
+})
 })
 module.exports = router;
