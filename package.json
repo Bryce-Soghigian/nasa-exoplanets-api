@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon .",
+    "docs":"npx apidoc -i routers/ -o public/",
     "heroku-postbuild": "knex migrate:latest",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

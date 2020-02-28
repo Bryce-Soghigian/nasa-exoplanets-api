@@ -4,7 +4,7 @@
     "url": "api/exoplanets/",
     "title": "",
     "group": "Exoplanets",
-    "description": "<p>gets a list of planet names</p>",
+    "description": "<p>gets a list of planet hostnames</p>",
     "version": "0.0.0",
     "filename": "routers/exoplanet-router/exoplanet-router.js",
     "groupTitle": "Exoplanets",
@@ -35,6 +35,28 @@
   },
   {
     "type": "get",
+    "url": "api/exoplanets/facilities",
+    "title": "",
+    "group": "Get_Facilities",
+    "description": "<p>Get all of the facilites that found each planet</p>",
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "Get_Facilities",
+    "name": "GetApiExoplanetsFacilities"
+  },
+  {
+    "type": "get",
+    "url": "api/exoplanets/orbitalrange",
+    "title": "",
+    "group": "Get_orbital_periods",
+    "description": "<p>get Planet Orbital Value with the higher and lower uncertainty. Includes Planet name</p>",
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "Get_orbital_periods",
+    "name": "GetApiExoplanetsOrbitalrange"
+  },
+  {
+    "type": "get",
     "url": "api/exoplanets/all",
     "title": "",
     "group": "Gets_Entire_exoplanets_table",
@@ -43,6 +65,40 @@
     "filename": "routers/exoplanet-router/exoplanet-router.js",
     "groupTitle": "Gets_Entire_exoplanets_table",
     "name": "GetApiExoplanetsAll"
+  },
+  {
+    "type": "get",
+    "url": "api/exoplanets/maxaxisvaluerange/${id}",
+    "title": "",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "$",
+            "description": "<p>{id} ID of the planet you are trying to get axis data on</p>"
+          }
+        ]
+      }
+    },
+    "group": "One_Planets_Axis_Range",
+    "description": "<p>Planet Orbital Semi-Major Axis Value [AU]</p>",
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "One_Planets_Axis_Range",
+    "name": "GetApiExoplanetsMaxaxisvaluerangeId"
+  },
+  {
+    "type": "get",
+    "url": "api/exoplanets/maxaxisvaluerange",
+    "title": "",
+    "group": "Planet_Axis_Range",
+    "description": "<p>Planet Orbital Semi-Major Axis Value [AU]</p>",
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "Planet_Axis_Range",
+    "name": "GetApiExoplanetsMaxaxisvaluerange"
   },
   {
     "type": "get",
@@ -61,7 +117,7 @@
         ]
       }
     },
-    "description": "<p>search the database by name</p>",
+    "description": "<p>search the database by hostname</p>",
     "version": "0.0.0",
     "filename": "routers/exoplanet-router/exoplanet-router.js",
     "groupTitle": "Search",
