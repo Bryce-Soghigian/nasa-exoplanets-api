@@ -62,6 +62,36 @@ router.get("/orbitalrange",(req,res) => {
         res.status(500).json({error_message:err})
     })
 })
+
+/**
+ * @api {get} api/exoplanets/findcolumn/${column}/${table}
+ * @apiGroup Search
+ * @apiParam column_name, table_name
+ * @apiDescription Search the database for a column in a table
+ */
+router.get("/findcolumn/:column/:table",(req,res) => {
+    let {column,table} = req.params
+    Model.searchDatabaseForColumn(column.toString(),table.toString())
+    .then(data => {
+        res.status(200).json(data)
+    }).catch(err => {
+        res.status(500).json({error_message:err})
+    })
+})
+/**
+ * @api {get} api/exoplanets/finditem/${column}/${table}/${id}
+ * @apiGroup Search
+ * @apiParam column_name, table_name, id
+ * @apiDescription Find an item in the database by column, table and id
+ */
+router.get("/finditem/:column/:table/:id",(req,res) => {
+    let {column,table,id}= req.params
+    Model.searchDatabaseForItem(column.toString(),table.toString(),id).then(data =>{
+        res.status(200).json(data)
+    }).catch(err => {
+        res.status(500).json({error_message:err})
+    })
+})
 /**
  * 
  * @api {get} api/exoplanets/search
