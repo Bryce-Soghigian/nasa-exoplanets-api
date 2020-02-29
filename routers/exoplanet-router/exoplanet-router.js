@@ -66,7 +66,7 @@ router.get("/orbitalrange", (req, res) => {
 });
 
 /**
- * @api {get} api/exoplanets/findcolumn/${column}/${table}
+ * @api {get} api/exoplanets/findcolumn/${column}
  * @apiGroup Search
  * @apiParam column_name
  * @apiDescription Search the database for a column in a table
@@ -82,10 +82,10 @@ router.get("/findcolumn/:column", (req, res) => {
     });
 });
 /**
- * @api {get} api/exoplanets/finditem/${column}/${table}/${id}
+ * @api {get} api/exoplanets/finditem/${column}/${id}
  * @apiGroup Search
  * @apiParam column_name id
- * @apiDescription Find an item in the database by column, table and id
+ * @apiDescription Find an item in the database by column and id
  */
 router.get("/finditem/:column/:id", (req, res) => {
   let { column, id } = req.params;

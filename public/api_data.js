@@ -128,7 +128,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/exoplanets/findcolumn/${column}/${table}",
+    "url": "api/exoplanets/findcolumn/${column}",
     "title": "",
     "group": "Search",
     "parameter": {
@@ -138,7 +138,7 @@ define({ "api": [
             "group": "Parameter",
             "optional": false,
             "field": "column_name",
-            "description": "<p>, table_name</p>"
+            "description": ""
           }
         ]
       }
@@ -147,11 +147,11 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "routers/exoplanet-router/exoplanet-router.js",
     "groupTitle": "Search",
-    "name": "GetApiExoplanetsFindcolumnColumnTable"
+    "name": "GetApiExoplanetsFindcolumnColumn"
   },
   {
     "type": "get",
-    "url": "api/exoplanets/finditem/${column}/${table}/${id}",
+    "url": "api/exoplanets/finditem/${column}/${id}",
     "title": "",
     "group": "Search",
     "parameter": {
@@ -161,16 +161,16 @@ define({ "api": [
             "group": "Parameter",
             "optional": false,
             "field": "column_name",
-            "description": "<p>, table_name, id</p>"
+            "description": "<p>id</p>"
           }
         ]
       }
     },
-    "description": "<p>Find an item in the database by column, table and id</p>",
+    "description": "<p>Find an item in the database by column and id</p>",
     "version": "0.0.0",
     "filename": "routers/exoplanet-router/exoplanet-router.js",
     "groupTitle": "Search",
-    "name": "GetApiExoplanetsFinditemColumnTableId"
+    "name": "GetApiExoplanetsFinditemColumnId"
   },
   {
     "type": "get",
