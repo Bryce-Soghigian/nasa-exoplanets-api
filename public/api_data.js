@@ -20,9 +20,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
+            "type": "id",
             "optional": false,
-            "field": "$",
-            "description": "<p>{id} type float</p>"
+            "field": "id",
+            "description": "<p>The id</p>"
           }
         ]
       }
@@ -75,9 +76,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
+            "type": "id",
             "optional": false,
-            "field": "$",
-            "description": "<p>{id} ID of the planet you are trying to get axis data on</p>"
+            "field": "id",
+            "description": "<p>of planet you are trying to get the axis data for</p>"
           }
         ]
       }
@@ -123,6 +125,52 @@ define({ "api": [
     "filename": "routers/exoplanet-router/exoplanet-router.js",
     "groupTitle": "Planet_Data_Summary",
     "name": "GetApiExoplanetsPlanetsumId"
+  },
+  {
+    "type": "get",
+    "url": "api/exoplanets/findcolumn/${column}/${table}",
+    "title": "",
+    "group": "Search",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "column_name",
+            "description": "<p>, table_name</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Search the database for a column in a table</p>",
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "Search",
+    "name": "GetApiExoplanetsFindcolumnColumnTable"
+  },
+  {
+    "type": "get",
+    "url": "api/exoplanets/finditem/${column}/${table}/${id}",
+    "title": "",
+    "group": "Search",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "column_name",
+            "description": "<p>, table_name, id</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Find an item in the database by column, table and id</p>",
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "Search",
+    "name": "GetApiExoplanetsFinditemColumnTableId"
   },
   {
     "type": "get",
