@@ -60,9 +60,9 @@ function findAllFacilities(){
 function findPlanetSummary(id){
 return db.where({id}).select("pl_hostname","pl_name","pl_orbper","pl_orbsmax","pl_orbincl","pl_bmassj","pl_dens","pl_radj","st_dist","st_teff","st_mass","st_rad","pl_facility").from("exoplanets")
 }
-function searchDatabaseForColumn(column_name,table){
-    return db.select(column_name).from(table)
+function searchDatabaseForColumn(column_name){
+    return db.select(column_name).from("exoplanets")
 }
-function searchDatabaseForItem(column_name,table,id){
-    return db.where({id}).select(column_name).from(table)
+function searchDatabaseForItem(column_name,id){
+    return db.where({id}).select(column_name).from("exoplanets")
 }
