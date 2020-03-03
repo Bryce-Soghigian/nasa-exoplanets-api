@@ -104,6 +104,17 @@
   },
   {
     "type": "get",
+    "url": "api/exoplanets/allsum",
+    "title": "",
+    "group": "Planet_Data_Summary",
+    "description": "<p>Gets A summarized version of the /all endpoint  that returns the same fields as /planetsum</p>",
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "Planet_Data_Summary",
+    "name": "GetApiExoplanetsAllsum"
+  },
+  {
+    "type": "get",
     "url": "api/exoplanets/planetsum/:id",
     "title": "",
     "group": "Planet_Data_Summary",
