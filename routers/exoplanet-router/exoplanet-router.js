@@ -208,4 +208,18 @@ router.get("/planetsum/:id", (req, res) => {
       res.status(500).json({ error_message: err });
     });
 });
+/**
+ * @api {get} planetsumbyname/:name
+ * @apiParam pl_hostname planethostname
+ */
+router.get("/planetsumbyname/:name",(req,res) => {
+  let {name} = req.params;
+  Model.findPlanetSummaryBypl_hostname(name)
+  .then(data => {
+    res.status(200).json(data)
+  }).catch(err => {
+    res.status(500).json({error_message:err});
+    })
+  })
+
 module.exports = router;

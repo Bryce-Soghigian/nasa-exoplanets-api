@@ -1,6 +1,28 @@
 define({ "api": [
   {
     "type": "get",
+    "url": "planetsumbyname/:name",
+    "title": "",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "pl_hostname",
+            "description": "<p>planethostname</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routers/exoplanet-router/exoplanet-router.js",
+    "group": "/Users/lambda_school_loaner_126/Desktop/nasa-exoplanets-api/routers/exoplanet-router/exoplanet-router.js",
+    "groupTitle": "/Users/lambda_school_loaner_126/Desktop/nasa-exoplanets-api/routers/exoplanet-router/exoplanet-router.js",
+    "name": "GetPlanetsumbynameName"
+  },
+  {
+    "type": "get",
     "url": "api/exoplanets/",
     "title": "",
     "group": "Exoplanets",
