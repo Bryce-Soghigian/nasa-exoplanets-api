@@ -178,6 +178,19 @@ router.get("/", (req, res) => {
     });
 });
 /**
+ * @api {get} api/exoplanets/allsum
+ * @apiGroup Planet Data Summary
+ * @apiDescription Gets A summarized version of the /all endpoint  that returns the same fields as /planetsum
+ */
+router.get("/allsum",(req,res) => {
+  Model.findPlanetsSummary()
+  .then(data => {
+    res.status(200).json(data)
+  }).catch(err => {
+    res.status(500).json({error_message:err})
+  })
+})
+/**
  * @api {get} api/exoplanets/planetsum/:id
  * @apiGroup Planet Data Summary
  * @apiParam {id} id of planet you are trying to get a sumary of
@@ -195,4 +208,18 @@ router.get("/planetsum/:id", (req, res) => {
       res.status(500).json({ error_message: err });
     });
 });
+/**
+ * @api {get} planetsumbyname/:name
+ * @apiParam pl_hostname planethostname
+ */
+router.get("/planetsumbyname/:name",(req,res) => {
+  let {name} = req.params;
+  Model.findPlanetSummaryBypl_hostname(name)
+  .then(data => {
+    res.status(200).json(data)
+  }).catch(err => {
+    res.status(500).json({error_message:err});
+    })
+  })
+
 module.exports = router;
