@@ -63,7 +63,7 @@ function findPlanetSummary(id){
 return db.where({id}).select("pl_hostname","pl_discmethod","pl_name","pl_orbper","pl_orbsmax","pl_orbincl","pl_bmassj","pl_dens","pl_radj","st_dist","st_teff","st_mass","st_rad","pl_facility").from("exoplanets")
 }
 function findPlanetSummaryBypl_hostname(pl_hostname){
-    return db.where({pl_hostname}).select("id","pl_discmethod","pl_name","pl_orbper","pl_orbsmax","pl_orbincl","pl_bmassj","pl_dens","pl_radj","st_dist","st_teff","st_mass","st_rad","pl_facility").from("exoplanets")
+    return db.where({pl_hostname}).select("pl_discmethod","pl_name","pl_orbper","pl_orbsmax","pl_orbincl","pl_bmassj","pl_dens","pl_radj","st_dist","st_teff","st_mass","st_rad","pl_facility").from("exoplanets")
     }
 function findPlanetsSummary(){
     return db.select("pl_hostname","pl_discmethod","pl_name","pl_orbper","pl_orbsmax","pl_orbincl","pl_bmassj","pl_dens","pl_radj","st_dist","st_teff","st_mass","st_rad","pl_facility").from("exoplanets")

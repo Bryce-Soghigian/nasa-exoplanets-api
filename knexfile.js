@@ -7,7 +7,7 @@ module.exports = {
     useNullAsDefault: true,
     
     connection: {
-      host: '127.0.0.1',
+      host: 'localhost',
       port: '5432',
       user: 'postgres',
       password:process.env.PASS,
