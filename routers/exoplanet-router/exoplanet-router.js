@@ -211,6 +211,7 @@ router.get("/planetsum/:id", (req, res) => {
 /**
  * @api {get} planetsumbyname/:name
  * @apiParam pl_hostname planethostname
+ * @apiGroup Planet Summary
  */
 router.get("/planetsumbyname/:name",(req,res) => {
   let {name} = req.params;
