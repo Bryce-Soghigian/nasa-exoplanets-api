@@ -166,7 +166,7 @@ router.get("/maxaxisvaluerange/:id", (req, res) => {
 /**
  * @api {get} api/exoplanets/
  * @apiGroup Exoplanets
- * @apiDescription gets a list of planet hostnames
+ * @apiDescription gets a list of planet hostnames and how they were discovered
  */
 router.get("/", (req, res) => {
   Model.findAllPlanetNames()
