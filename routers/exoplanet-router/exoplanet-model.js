@@ -48,7 +48,7 @@ function findOrbitalEccentricityValueRange(){
 }
 
 function findAllPlanetNames(){
-    return db.from("exoplanets").select("pl_hostname")
+    return db.from("exoplanets").select("pl_hostname","pl_discmethod")
 }
 function findPlanetMassOrJupiterMassById(id){
     return db.where({id}).select("pl_hostname","pl_bmassn","pl_bmassprov").from("exoplanets")
